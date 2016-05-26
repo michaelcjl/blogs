@@ -13,4 +13,7 @@ hexo clean
 hexo g
 hexo s
 hexo d
+update 备份
+git pull https://github.com/michaelcjl/blogs(这步骤非必须)
+git push origin blogs
 
