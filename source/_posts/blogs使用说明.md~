@@ -5,7 +5,7 @@ tags: blogs
 categories: blogs
 
 ---
-#blogs使用说明
+# blogs使用说明
 ## 1.cd blogs
 ## 2.git checkout blogs
 ## 3.在blogs/source/_post/下创建一个.md文档，在文档里写内容。

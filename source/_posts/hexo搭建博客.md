@@ -26,7 +26,7 @@ hexo,github搭载博客
 > * 博主不需要折腾各种建站技术，任何支持静态网页的主机空间和云存储空间都可以拿来发布博客
 > * 博主可以自由选择自己喜欢的本地写作工具，而不需要受制于在线博客写作工具的质量火热用户体验
 
-##GitHub 与 静态博客
+## GitHub 与 静态博客
 ### 2. 静态博客和动态博客
 静态博客是个新生事物。静态博客的流行跟著名的开源社区Github的支持是分不开的。因此，绝大部分静态博客平台设计得还是比较极客，更适合有一定编程技能的人来使用，并不适合完全零起点的完全没有编程知识的普通用户。而Github除提供在线Markdown编辑器之外，还提供了Github Page服务，可以将用户托管在Github上的Markdown博客发布为静态网站。博主完全可以将自己的博客站免费寄放在Github上。此外，通过Github发布博客，还有一个额外的好处，那就是你的博客文章可以用Git来管理，这样你就可以在Github上获得博客文章的完整发布历史（像程序员管理源代码一样），并且可以随时获取历史版本或回退和回退到特定的版本上，相当于有了强大的备份系统。
 
@@ -36,7 +36,7 @@ hexo出自台湾大学生tommy351之手，是一个基于Node.js的静态博客�
 
 **本着不花钱，爱折腾的原则，本人选择Hexo加上GitPages的方法搭建自己的独立博客。**
 
-##开始
+## 开始
 ### 1. Hexo环境安装
 > * 在Hexo的官网详细介绍了Hexo的安装和使用，安装Hexo的前提是需要先安装Node js和Git。
 
@@ -46,7 +46,7 @@ hexo出自台湾大学生tommy351之手，是一个基于Node.js的静态博客�
 ```
 #这边可以使用curl也可以通过wget
 $ curl https://raw.github.com/creationix/nvm/master/install.sh | sh
-#不过,我只有wget方法能成功
+# 不过,我只有wget方法能成功
 $ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh'
 ```
 nvm安装好了之后,通过nvm安装node.js
@@ -73,7 +73,7 @@ $ npm install -g hexo-cli
 ### 4.Github pages 仓库创建
 安装好Hexo后,就该另一个主角Github pages 登场了.关于Github pages的介绍,请看这里,它主要的作用是github给你或你的团队展示你的项目的地方,我们用这个来放我的博客简直再适合不过了.
 Github pages本质还是你github上的一个repository,只不过它的命名规则是[suername].github.io的形式,并且每个github只能有这么一个这样的仓库.创建好这样的仓库后就可以在浏览器地址栏输入[username].github.io进行访问了.
-##执行
+## 执行
 Hexo和Github pages 准备好以后,我们就可以正式开始博客建立了.
 > * 初始化本地博客目录:
 ```
