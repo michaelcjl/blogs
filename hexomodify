@@ -1,0 +1,24 @@
+#!/bin/bash
+# 此脚本用于对已有博客进行修改，通过输入博客文件的名称（不要忘记后缀），将此博客移到一个相对外层目录，方便使用CMD Markdown打开，修改完，再用hexonew 文件名发布
+
+#博客目录
+BLOG_DIR="/home/cjl/blogs/source/_posts"
+#想要将博客移到哪个目录
+DES_DIR="/home/cjl/blogs/temp"
+
+
+fileName=${BLOG_DIR}$1
+
+if [ -e $fileName ]; then
+
+	mv $fileName $DES_DIR
+
+	newName=${1##*-}
+
+	mv $DES_DIR$1 $DES_DIR$newName
+	
+
+else
+	echo "该文件不存在"
+	exit 1
+fi

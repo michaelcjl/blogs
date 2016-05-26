@@ -1,0 +1,97 @@
+#!/bin/bash
+# fileName: hexonew
+# 当我用CMD Markdown创建一片博客到指定目录时,初始命名为title.md，此脚本可以自动帮我修改名字为 yyyy-mm-dd-title.md 并且mv 到 _post 文件夹下
+# 当mv 操作后让我判断是否要在本地预览，如果不预览，那么直接退出，如果需要预览，预览后再询问我是否要发布到我的网站
+# 注意：必须在title.md目录中运行此脚步
+
+DES_PATH="/home/cjl/blogs/source/_posts"
+# 运行hexo的路径
+HEXO_PATH="/home/cjl/blogs/"
+oldName="$1"
+NAME_PREFIX="$(date +%Y-%m-%d-)"
+YOUR_WEBSITE="http://michaelcjl.github.io/"
+
+if [ -e "$oldName" ]; then
+
+    #重命名操作
+    fileName=${NAME_PREFIX}${oldName}
+    mv $oldName $fileName
+    #移动文件
+    mv $fileName $DES_PATH
+
+    #询问是否需要在本地预览,首先切换到hexo目录
+    while true; do
+
+        echo -n "是否需要预览(y/n) -> "
+        read isPreview
+
+        case $isPreview in
+
+            y|Y)
+                # 切换到hexo目录,并启动本地服务器
+                cd $HEXO_PATH
+                hexo s &
+                # 休眠2s 使得启动服务
+                sleep 2
+                # 访问页面
+                google-chrome http://localhost:4000
+
+                while true; do
+
+                    echo -n "是否需要部署到github (y/n) -> "
+                    read isDeploy
+
+                    case $isDeploy in
+
+                        y|Y) 
+                            hexo g
+                            hexo d
+
+                            while true; do
+
+                                echo -n "部署成功，是否访问你的网站 (y/n) -> "
+                                read isVisit
+                                case $isVisit in
+                                    y|Y) 
+                                        firefox ${YOUR_WEBSITE}
+                                        break
+                                        ;;
+                                    n|N)
+                                        break
+                                        ;;
+                                    *)
+                                        ;;
+                                esac
+                            done
+
+                            break
+                            ;;
+                        n|N)
+                            break
+                            ;;
+                        *)
+                            ;;
+                    esac
+                done
+
+                break
+                ;;
+
+            n|N)
+                    break
+                    ;;
+
+            *) echo "非法输入"
+                    ;;
+        esac
+
+    done
+
+else
+
+    echo "傻逼，你还没有写文章或者文件路径写错了，怎么让我帮你啊！"
+    exit 1
+
+fi
+
+exit
