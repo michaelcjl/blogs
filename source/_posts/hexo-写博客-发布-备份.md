@@ -1,6 +1,6 @@
 ---
 title: hexo 写博客-发布-备份
-date: 2016-05-26 15:03:24
+date: 2016-05-26 15:39:58
 tags:hexo,博客,备份
 categories:博客
 ---
@@ -42,4 +42,5 @@ git push origin blogs
  `npm install hexo,npm install,npm install hexo-deployer-git`
 之后就可以随心所遇的在另外一台电脑上更新博客了=。=
 以上步骤结束之后，执行hexo g -d可能会报“TypeError: Cannot set property ‘lastIndex’ of undefined”，这时只需要执行hexo clean即可。
+
 
