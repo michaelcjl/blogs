@@ -6,19 +6,19 @@ categories:博客
 ---
 # hexo 写博客-发布-备份
 
-# 1.写博客
+1.写博客
 在你的博客根目录下执行：
 
     hexo new "Hello Hexo" 或 hexo n "Hello Hexo" 生成一个markdown文件骨架用于填写内容
     
 在博客的_posts文件夹下（blogs/source/_posts）会生成Hello Hexo.md的文件，打开该文件并写入你的文档。markdown文件头部, 支持多标签
-# 2.发布博客
+2.发布博客
 ```
 hexo generate 或 hexo g 写完博客后, 生成静态内容
 hexo server 或 hexo s 启动本地服务器可以先看一下效果
 hexo deploy 或 hexo d 发布到外网
 ```
-# 3.备份博客
+3.备份博客
 网络上面大部分的方法都是使用网盘进行备份，这种方法实在是太不“程序员”了！我使用git分支来备份博客。使用GithubPage生成的博客都是存放在github的仓库（XXXX.github.io）的master分支中，我在这个仓库中新建一个分支blogs来保存博客的源文件。这样就可以用一个仓库来存放Git Page，以及备份博客。
 
 > *  在博客的根目录下执行git init,生成一个git仓库，因为根目录下已经存在一个.gitignore文件，所以不需要自己去管理ignore文件。
